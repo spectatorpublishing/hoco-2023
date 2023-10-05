@@ -1,5 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
+import filmlong from '../filmlong.svg';
+
+
+const NavContainer = styled.nav`
+    background-image: url(${filmlong});
+    background-size: 100%;
+    width:100%;
+    background-repeat: repeat-x;
+    background-position: left center, right center;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    height: 150px; /* make sure image is not cut off */
+`;
 
 const NavBox = styled.div`
     display: inline-flex;
@@ -19,7 +33,7 @@ const StyledLink = styled.a`
 
 function NavigationBar() {
   return (
-    <nav>
+    <NavContainer>
       <ul style={{ listStyleType: 'none', padding: 0}}>
         <NavBox>
         <li><StyledLink href="/">Home</StyledLink></li>
@@ -31,7 +45,7 @@ function NavigationBar() {
         <li><StyledLink href="/spectrum">Spectrum</StyledLink></li>
         </NavBox>
       </ul>
-    </nav>
+    </NavContainer>
   );
 }
 
