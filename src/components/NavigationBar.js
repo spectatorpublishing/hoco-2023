@@ -26,8 +26,8 @@ const StyledLink = styled.a`
     font-family: Special Elite;
     text-decoration: none; /* Remove underlines */
     color: #333; /* Set the desired text color */
-    margin-right: 10px;
-    margin-left:10px;
+    margin-right: 42px;
+    margin-left:42px;
 `
 
 
