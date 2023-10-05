@@ -29,7 +29,6 @@ function NavigationBar() {
         <li><StyledLink href="/a-c">A&C</StyledLink></li>
         <li><StyledLink href="/opinion">Opinion</StyledLink></li>
         <li><StyledLink href="/spectrum">Spectrum</StyledLink></li>
-        <li><StyledLink href="/city-news">City News</StyledLink></li>
         </NavBox>
       </ul>
     </nav>
