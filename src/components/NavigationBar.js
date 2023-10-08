@@ -8,8 +8,6 @@ const NavContainer = styled.nav`
     background-size: 100%;
     background-size: auto 100%;
     width:100%;
-    background-repeat: repeat-x;
-    background-position: left center, right center;
     display: flex;
     justify-content:center;
     align-items: center;
@@ -20,7 +18,6 @@ const NavBox = styled.div`
     display: flex;
     align-items: center;
     width: 100%;
-    max-width:960px;
 `;
 
 const StyledLink = styled.a`
@@ -40,6 +37,10 @@ function NavigationBar() {
     <NavContainer>
       <ul style={{ listStyleType: 'none'}}>
         <NavBox>
+        <li><StyledLink></StyledLink></li>
+        <li><StyledLink></StyledLink></li>
+        <li><StyledLink></StyledLink></li>
+        <li><StyledLink></StyledLink></li>
         <li><StyledLink href="/">Home</StyledLink></li>
         <li><StyledLink href="/university">Uni</StyledLink></li>
         <li>< StyledLink href="/city-news">City</StyledLink></li>
@@ -47,6 +48,10 @@ function NavigationBar() {
         <li><StyledLink href="/a-c">A&C</StyledLink></li>
         <li><StyledLink href="/opinion">Opinion</StyledLink></li>
         <li><StyledLink href="/spectrum">Spectrum</StyledLink></li>
+        <li><StyledLink></StyledLink></li>
+        <li><StyledLink></StyledLink></li>
+        <li><StyledLink></StyledLink></li>
+        <li><StyledLink></StyledLink></li>
         </NavBox>
       </ul>
     </NavContainer>
