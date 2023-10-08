@@ -6,7 +6,7 @@ const LogoWrapper = styled.div`
   flex-direction: column;     /* Stack children vertically */
   align-items: flex-end;      /* Align children to the right */
   margin-right: 20px; 
-  margin-top: 30px;
+  margin-top:20px;
   
 `
 
@@ -14,6 +14,7 @@ const LogoImg = styled.img`
     max-width: 18%;             /* Limit the maximum width of the image */
     height: auto;               /* Maintain aspect ratio when resizing */
 `
+
 
 
 
