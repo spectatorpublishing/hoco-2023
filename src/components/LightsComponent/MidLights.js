@@ -7,7 +7,7 @@ const TapedPictureContainer = styled.div`
     background: #E1DDDD;
     box-shadow: 13px 18px 24px 0px rgba(0, 0, 0, 0.25);
     padding-top: 2rem;
-`
+`;
 
 const Title = styled.div`
     font-family: Kalam;
@@ -16,7 +16,7 @@ const Title = styled.div`
     text-align: left;
     padding-left: 10%;
     padding-right: 10%;
-`
+`;
 
 const Author = styled.div`
     font-family: Kalam;
@@ -24,27 +24,26 @@ const Author = styled.div`
     font-size: 0.8125rem;
     padding-left: 10%;
     padding-right: 10%;
-`
+`;
 
-function TapedPicture({
-    title,
-    author
-}) {
+const MidLightsContainer = styled(TapedPictureContainer)`
+    transform: translateY(-50px);  // Adjust this value as needed
+`;
+
+function MidLights({ title, author }) {
     return (
         <>
-            <TapedPictureContainer>
-                <img
-                    src={ testImg }
-                />
+            <MidLightsContainer>
+                <img src={testImg} alt="Description of the image" />
                 <Title>
                     { title }
                 </Title>
                 <Author>
                     { `by ${ author }` }
                 </Author>
-            </TapedPictureContainer>
+            </MidLightsContainer>
         </>
     )
 }
 
-export default TapedPicture;
+export default MidLights;

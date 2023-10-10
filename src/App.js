@@ -1,14 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
 import Title from './components/Title';
 import Credits from './components/Credits'
-import LightsComponent from './components/LightsComponent/LightsComponent'
+import NewsSection from './components/LightsComponent/NewsSection'
 
 function App() {
   return (
     <div className="App">
       <Title/>
-      <LightsComponent/>
+      <NewsSection title="University News"/>
+      <NewsSection title="City News"/>
       <Credits/>
     </div>
   );
