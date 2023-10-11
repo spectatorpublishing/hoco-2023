@@ -1,29 +1,31 @@
 import React from 'react';
 import styled from 'styled-components';
 import filmlong from '../filmlong.svg';
-import single from '../single.png';
+import button from '../button.svg';
 
 //background-image: url(${filmlong});
 const NavContainer = styled.nav`
-    background-size: 100%;
-    background-size: auto 100%;
     width:100%;
     display: flex;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
     padding-top: 30px;
+    max-width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
 `;
 
 const NavBox = styled.div`
     display: flex;
     align-items: center;
-    width: 100%;
 `;
 
 const StyledLink = styled.a`
     font-family: Special Elite;
-    background-image: url(${single});
-    background-size:cover;
+    background-image: url(${ button });
+    background-size: cover;
+    width: 187px;
+    height: 127px;
     padding: 40px 40px;
     text-decoration: none; /* Remove underlines */
     color: #333; /* Set the desired text color */
@@ -31,31 +33,79 @@ const StyledLink = styled.a`
     flex:1;
 `
 
+const FilmButton = styled.div`
+    background-image: url(${ button });
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 187px; /* Set width to auto to allow it to adjust to the image's width */
+    height: 127px; /* Set height to 100% to match the image's height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+`
+
+const NavButton = styled.button`
+    width: 173px;
+    height: 57px;
+    margin-bottom: 4px;
+    margin-left:2px;
+    background-color: #CAC3A8;
+    border: none; /* Removes the button border */
+    font-family: Special Elite;
+    font-size: 22px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+        background-color: #EBD791;
+    }
+`
+
+function NavElement({ path, title }) {
+  
+  return (
+    <FilmButton>
+      <NavButton>
+        <a 
+          href={`/${ path }`}>
+            { title }
+        </a>
+      </NavButton>
+    </FilmButton>
+  )
+}
+
 
 function NavigationBar() {
   return (
-    <NavContainer>
-      <ul style={{ listStyleType: 'none'}}>
-        <NavBox>
-        <li><StyledLink></StyledLink></li>
-        <li><StyledLink></StyledLink></li>
-        <li><StyledLink></StyledLink></li>
-        <li><StyledLink></StyledLink></li>
-        <li><StyledLink href="/">Home</StyledLink></li>
-        <li><StyledLink href="/university">Uni</StyledLink></li>
-        <li>< StyledLink href="/city-news">City</StyledLink></li>
-        <li><StyledLink href="/sports">Sports</StyledLink></li>
-        <li><StyledLink href="/a-c">A&C</StyledLink></li>
-        <li><StyledLink href="/opinion">Opinion</StyledLink></li>
-        <li><StyledLink href="/spectrum">Spectrum</StyledLink></li>
-        <li><StyledLink></StyledLink></li>
-        <li><StyledLink></StyledLink></li>
-        <li><StyledLink></StyledLink></li>
-        <li><StyledLink></StyledLink></li>
-        </NavBox>
-      </ul>
-    </NavContainer>
+    <>
+      <NavContainer>
+        <ul style={{ listStyleType: 'none'}}>
+          <NavBox>
+            <FilmButton/>
+            <FilmButton/>
+            <FilmButton/>
+            <FilmButton/>
+            <FilmButton/>
+            <NavElement path={ "/" } title={ "Home" }/>
+            <NavElement path={ "/university" } title={ "University" }/>
+            <NavElement path={ "/city-news" } title={ "City News" }/>
+            <NavElement path={ "/sports" } title={ "Sports" }/>
+            <NavElement path={ "/a-c" } title={ "A&C" }/>
+            <NavElement path={ "/opinion" } title={ "Opinion" }/>
+            <FilmButton/>
+            <FilmButton/>
+            <FilmButton/>
+            <FilmButton/>
+            <FilmButton/>
+          </NavBox>
+        </ul>
+      </NavContainer>
+    </>
   );
 }
+
 
 export default NavigationBar;
