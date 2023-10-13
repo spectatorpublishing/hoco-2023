@@ -11,7 +11,7 @@ const LogoWrapper = styled.div`
 `
 
 const LogoImg = styled.img`
-    max-width: 18%;             /* Limit the maximum width of the image */
+    max-width: 32%;             /* Limit the maximum width of the image */
     height: auto;               /* Maintain aspect ratio when resizing */
 `
 
