@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import testImg from './test_img.png'
+import testImg from './test_img.'
 
 const TapedPictureContainer = styled.div`
     width: 16.3125rem;
@@ -7,6 +7,14 @@ const TapedPictureContainer = styled.div`
     background: #E1DDDD;
     box-shadow: 13px 18px 24px 0px rgba(0, 0, 0, 0.25);
     padding-top: 2rem;
+`;
+
+const TapedPictureImage = styled.img`
+    width: 12.3125rem;
+    height: 17.5625rem;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 `;
 
 const Title = styled.div`
@@ -34,7 +42,7 @@ function MidLights({ title, author }) {
     return (
         <>
             <MidLightsContainer>
-                <img src={testImg} alt="Description of the image" />
+                <TapedPictureImage src={testImg} />
                 <Title>
                     { title }
                 </Title>

@@ -5,6 +5,7 @@ import Title from './components/Title';
 import Envelope from './components/Envelope';
 import Credits from './components/Credits'
 import NewsSection from './components/LightsComponent/NewsSection'
+import Illustration from './components/Illustration';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Logo></Logo>
       <NavigationBar></NavigationBar>
       <Title/>
+      <Illustration/>
       <Envelope/>
       <NewsSection title="University News"/>
       <NewsSection title="City News"/>

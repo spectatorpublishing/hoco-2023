@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import testImg from './test_img.png'
+import { ReactComponent as TestImage } from './test_img.svg';
 
 const TapedPictureContainer = styled.div`
     width: 16.3125rem;
@@ -7,7 +7,7 @@ const TapedPictureContainer = styled.div`
     background: #E1DDDD;
     box-shadow: 13px 18px 24px 0px rgba(0, 0, 0, 0.25);
     padding-top: 2rem;
-`
+`;
 
 const Title = styled.div`
     font-family: Kalam;
@@ -16,7 +16,7 @@ const Title = styled.div`
     text-align: left;
     padding-left: 10%;
     padding-right: 10%;
-`
+`;
 
 const Author = styled.div`
     font-family: Kalam;
@@ -24,27 +24,20 @@ const Author = styled.div`
     font-size: 0.8125rem;
     padding-left: 10%;
     padding-right: 10%;
-`
+`;
 
-function TapedPicture({
-    title,
-    author
-}) {
+function TapedPicture({ title, author }) {
     return (
-        <>
-            <TapedPictureContainer>
-                <img
-                    src={ testImg }
-                />
-                <Title>
-                    { title }
-                </Title>
-                <Author>
-                    { `by ${ author }` }
-                </Author>
-            </TapedPictureContainer>
-        </>
-    )
+        <TapedPictureContainer>
+            <TestImage />
+            <Title>
+                {title}
+            </Title>
+            <Author>
+                {`by ${author}`}
+            </Author>
+        </TapedPictureContainer>
+    );
 }
 
 export default TapedPicture;

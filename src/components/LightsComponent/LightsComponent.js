@@ -1,12 +1,9 @@
 import React from "react";
-import lights from './lights.png'
-import TapedPicture from './TapedPicture'
+import { ReactComponent as Lights } from './lights.svg';
+// import { ReactComponent as TestImage } from './test_img.svg';
+import TapedPicture from './TapedPicture';
 import styled from 'styled-components';
-import MidLights from "./MidLights";
-
-const ImgContainer = styled.img`
-    width: 100%;
-`;
+// import MidLights from "./MidLights";
 
 const PicturesContainer = styled.div`
     display: flex;
@@ -18,10 +15,10 @@ const PicturesContainer = styled.div`
 function LightsComponent() {
     return (
         <>
-            <ImgContainer src={lights} alt="Description of lights image" />
+            <Lights />
             <PicturesContainer>
                 <TapedPicture title={"Columbia Policies on Gender Neutral Bathrooms"} author={"Ramel Nunez"} />
-                <MidLights title={"Columbia Policies on Gender Neutral Bathrooms"} author={"hey"} />
+                <TapedPicture title={"Columbia Policies on Gender Neutral Bathrooms"} author={"hey"} />
                 <TapedPicture title={"hey"} author={"hey"} />
             </PicturesContainer>
         </>
@@ -29,3 +26,4 @@ function LightsComponent() {
 }
 
 export default LightsComponent;
+
