@@ -1,21 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styled from 'styled-components';
 
 const Body = styled.div`
     margin-bottom: 400px;
     padding: 0px;
-    
 `;
-
-// const rotate = keyframes`
-//   from {
-//     transform: rotate(0deg);
-//   }
-
-//   to {
-//     transform: rotate(180deg);
-//   }
-// `;
 
 const EnvelopeWrapper = styled.div`
     position: relative;
@@ -29,36 +18,28 @@ const EnvelopeWrapper = styled.div`
     background-color: #D9D8D8;
     z-index: 0;
     cursor: pointer;
-
+    perspective: 1500px;
 `;
 
 const Cover = styled.div`
     position: absolute;
-
-    
 `;
 
 const CoverTop = styled.div`
     position: absolute;
+    top: -600px;
     border-left: 400px solid transparent;
     border-right: 400px solid transparent;
     border-bottom: 300px solid transparent;
     border-top: 300px solid #C4C4C9;
-    transform-origin: top;
-    animation: rotate(180deg) 0.1s linear;
-    z-index: 3;
-
-    ${props => {
-        if (props.clickedState) {
-            
-        } else {
-
-        }
-
-
-    }}
-    
+    transform-origin: center;
+    transform: rotateX(-180deg);  // It will always stay in this state
+    z-index: 1;
 `;
+
+
+
+
 
 const CoverBottomRight = styled.div`
     position: absolute;
@@ -68,8 +49,7 @@ const CoverBottomRight = styled.div`
     border-top: 300px solid transparent;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-    z-index: 3;
-    
+    z-index: ${props => props.clickedState ? '3' : '4'};
 `;
 
 const CoverLeft = styled.div`
@@ -79,7 +59,7 @@ const CoverLeft = styled.div`
     border-bottom: 300px solid transparent;
     border-top: 300px solid transparent;
     border-bottom-right-radius: 10px;
-    z-index: 3;
+    z-index: ${props => props.clickedState ? '3' : '4'};
 `;
 
 const LetterWrapper = styled.div`
@@ -93,8 +73,9 @@ const LetterWrapper = styled.div`
     padding: 20px;
     text-align: center;
     font-family: 'Kalam', cursive;
-    z-index: 2;
-    
+    z-index: ${props => props.clickedState ? '5' : '3'};
+    transform: ${props => props.clickedState ? 'translateY(-150px)' : 'translateY(100px)'};
+    transition: transform 0.5s;
 `;
 
 const Title = styled.div`
@@ -114,82 +95,55 @@ const Text = styled.div`
     font-size: 18px;
     font-style: normal;
     font-weight: 400;
-    line-height: 137.3%; /* 24.714px */
+    line-height: 137.3%;
 `;
-
-const Open = styled.div`
-    transform: rotateX(180deg);
-    transition: transform 0.4s ease;
-    z-index: 1;
-
-    position: relative;
-    border-left: 200px solid transparent;
-    border-right: 200px solid transparent;
-    border-bottom: 150px solid transparent;
-    border-top: 150px solid #D9D8D8;
-    transform-origin: top;
-`;
-
-const Close = styled.div`
-    transform: rotateX(0deg);
-    transition: transform 0.4s 0.4s ease;
-    z-index: 5;
-`;
-
-const In = styled.div`
-    transform: rotateY(0px);
-    transition: transform 0.4s ease;
-    z-index: 3;
-`;
-
-const OutPartial = styled.div`
-transform: rotateY(-100px);
-transition: transform 0.4s 0.4s ease;
-z-index: 3;
-`;
-
-
-
-
 
 const letter_paragraph = `Lorem ipsum dolor sit amet consectetur. Integer viverra etiam vitae sed. 
 Arcu gravida nulla tristique interdum vel. Eget volutpat urna id sed condimentum. Odio adipiscing 
+massa ipsum vitae quisque.Lorem ipsum dolor sit amet consectetur. Integer viverra etiam vitae sed. 
+Arcu gravida nulla tristique interdum vel. Eget volutpat urna id sed condimentum. Odio adipiscing 
+massa ipsum vitae quisque.Lorem ipsum dolor sit amet consectetur. Integer viverra etiam vitae sed. 
+Arcu gravida nulla tristique interdum vel. Eget volutpat urna id sed condimentum. Odio adipiscing 
+massa ipsum vitae quisque.Lorem ipsum dolor sit amet consectetur. Integer viverra etiam vitae sed. 
+Arcu gravida nulla tristique interdum vel. Eget volutpat urna id sed condimentum. Odio adipiscing 
+massa ipsum vitae quisque.Lorem ipsum dolor sit amet consectetur. Integer viverra etiam vitae sed. 
+Arcu gravida nulla tristique interdum vel. Eget volutpat urna id sed condimentum. Odio adipiscing 
+massa ipsum vitae quisque.Lorem ipsum dolor sit amet consectetur. Integer viverra etiam vitae sed. 
+Arcu gravida nulla tristique interdum vel. Eget volutpat urna id sed condimentum. Odio adipiscing 
 massa ipsum vitae quisque.`;
 
-
-const Envelope =  ({}) => {
-    
+const Envelope = () => {
     const [clickedState, setClickedState] = useState(false);
-    function handleClick(){
-        setClickedState(clickedState => !clickedState)
+    const [zIndex, setZIndex] = useState(1); // new state for zIndex
 
+    function handleClick() {
+        if (!clickedState) {
+            setClickedState(true);
+            setTimeout(() => {
+                setZIndex(5); // After 500ms, bring the letter forward
+            }, 500);
+        } else {
+            setZIndex(1);
+            setClickedState(false);
+        }
     }
-    
-
-
 
     return (
         <Body>
-        <EnvelopeWrapper id="envelope" onClick={handleClick}>
-            <Cover>
-                <CoverTop id="cover top"></CoverTop>
-                <CoverLeft id="cover left"></CoverLeft>
-                <CoverBottomRight id="cover bottom right"></CoverBottomRight>
-                
-            </Cover>
-            <LetterWrapper id="">
-                    <Title>Letter From The Editor ~</Title>
+            <EnvelopeWrapper id="envelope" onClick={handleClick}>
+                <Cover>
+                    <CoverTop clickedState={clickedState}></CoverTop>
+                    <CoverLeft clickedState={clickedState}></CoverLeft>
+                    <CoverBottomRight clickedState={clickedState}></CoverBottomRight>
+                </Cover>
+                <LetterWrapper clickedState={clickedState} style={{zIndex: zIndex}}>
+                    <Title>~Letter From The Editor ~</Title>
                     <Text>{letter_paragraph}</Text>
-
-            </LetterWrapper>
-
-        </EnvelopeWrapper>
+                </LetterWrapper>
+            </EnvelopeWrapper>
         </Body>
-
-
     )
-
 }
 
+
 export default Envelope;
-//code adopted from = "https://medium.com/web-for-you/how-to-make-a-interactive-envelope-9df970614eea"
