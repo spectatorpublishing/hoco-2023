@@ -1,24 +1,15 @@
+import { React } from 'react';
 import './App.css';
-import NavigationBar from './components/NavigationBar';
-import Logo from './components/Logo';
-import Title from './components/Title';
-import Envelope from './components/Envelope';
-import Credits from './components/Credits'
-import NewsSection from './components/LightsComponent/NewsSection'
-import Illustration from './components/Illustration';
+import { BrowserRouter as BrowserRouter, Routes, Route} from 'react-router-dom';
+import Home from './containers/Home';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <Logo></Logo>
-      <NavigationBar></NavigationBar>
-      <Title/>
-      <Illustration/>
-      <Envelope/>
-      <NewsSection title="University News"/>
-      <NewsSection title="City News"/>
-      <Credits/>
-    </div>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

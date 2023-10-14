@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const TitleText = styled.h1`
   color: #000;
   font-family: Special Elite;
-  font-size: 94px;
+  font-size: 6rem;
   font-style: normal;
   font-weight: 400;
   text-align:left;

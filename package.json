@@ -1,4 +1,5 @@
 {
+"homepage": "https://homecoming2023.columbiaspectator.com",
   "name": "my-react-app",
   "version": "0.1.0",
   "private": true,
@@ -7,7 +8,11 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "react": "^18.2.0",
+    "react-burger-menu": "^3.0.9",
     "react-dom": "^18.2.0",
+    "react-hamburger-menu": "^1.2.1",
+    "react-router-dom": "^6.16.0",
+    "react-router-hash-link": "^2.4.3",
     "react-scripts": "5.0.1",
     "styled-components": "^6.0.8",
     "web-vitals": "^2.1.4"

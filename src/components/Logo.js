@@ -4,29 +4,29 @@ import styled from 'styled-components';
 const LogoWrapper = styled.div`
   display: flex;              /* Use flexbox for layout */
   flex-direction: column;     /* Stack children vertically */
-  align-items: flex-end;      /* Align children to the right */
-  margin-right: 20px; 
-  margin-top:20px;
+  align-items: center;      /* Align children to the right */
+  padding-top:2rem;
   
+ &:hover{
+	cursor:pointer;
+ } 
+ @media screen and (max-width: 1024px) {
+		display:none;
+	}
 `
 
 const LogoImg = styled.img`
-    max-width: 32%;             /* Limit the maximum width of the image */
+    max-width: 18rem;             /* Limit the maximum width of the image */
     height: auto;               /* Maintain aspect ratio when resizing */
 `
 
-
-
-
-// float: right;         /* Align the image to the right */
-//   max-width: 20%;      /* Limit the maximum width of the image */
-//   height: auto;         /* Maintain aspect ratio when resizing */
-//   margin-right: 20px;
 function Logo() {
     return (
         <LogoWrapper>
-            <LogoImg src={speclogo} alt="logo"></LogoImg>
-        </LogoWrapper>
+            <a href="https://www.columbiaspectator.com/"/>
+				<LogoImg src="https://spec-imagehosting.s3.amazonaws.com/CDSwhitemasthead.png" alt="logo"/>
+			<a/>
+		</LogoWrapper>
     );
   }
   
