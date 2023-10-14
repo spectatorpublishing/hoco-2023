@@ -14,12 +14,13 @@ const EnvelopeWrapper = styled.div`
     border-bottom-right-radius: 10px;
     margin-left: auto;
     margin-right: auto;
-    top: 200px;
+    top: 300px;  // Adjusted from 200px to 300px to push it 100px further down
     background-color: #D9D8D8;
     z-index: 0;
     cursor: pointer;
     perspective: 1500px;
 `;
+
 
 const Cover = styled.div`
     position: absolute;
@@ -36,9 +37,6 @@ const CoverTop = styled.div`
     transform: rotateX(-180deg);  // It will always stay in this state
     z-index: 1;
 `;
-
-
-
 
 
 const CoverBottomRight = styled.div`

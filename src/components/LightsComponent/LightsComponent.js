@@ -10,7 +10,13 @@ const PicturesContainer = styled.div`
     flex-direction: row;
     justify-content: space-evenly;
     margin-bottom: 2rem;
+
+    // Target the middle TapedPicture component
+    & > :nth-child(2) {
+        transform: translateY(-40px); // Adjust the value to your preference
+    }
 `;
+
 
 function LightsComponent() {
     return (
