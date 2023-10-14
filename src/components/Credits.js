@@ -4,7 +4,7 @@ import { credits } from '../data/credits'
 
 const Container = styled.div`
     width: 100%;
-    background-color: #9FB3BF;
+    /* background-color: #9FB3BF; */
     color: #0046A6;
     padding-bottom:3rem;
 `;
