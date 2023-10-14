@@ -1,26 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
-import rect from './../rect.PNG';
+import Illo from "../hoco-image.png"
 
 const CenteredContainer = styled.div`
-  display: flex;
-  justify-content: center;  
-  align-items: center;     
-
+@media screen and (max-width: 1024px) {
+		display:none;
+	}   
 `;
 
-const CenteredImage = styled.img`
-margin-top: -5%;
-  width: 90%;
-  height: 100%;
-  object-fit: cover;
+const CenteredImage = styled.img`	
+	width:100%;
 `;
 
 
 function CenteredImgComponent() {
   return (
     <CenteredContainer>
-      <CenteredImage src={rect} alt="Description" />
+      <CenteredImage src={Illo} alt="" />
     </CenteredContainer>
   );
 }
