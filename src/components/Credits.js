@@ -7,6 +7,10 @@ const Container = styled.div`
     /* background-color: #9FB3BF; */
     color: #0046A6;
     padding-bottom:3rem;
+	margin-top:10rem;
+	@media screen and (max-width: 1024px) {
+		margin-top:0rem;
+	}
 `;
 
 const HeaderDiv = styled.div`
@@ -17,25 +21,21 @@ const HeaderDiv = styled.div`
 const Header = styled.h1`
     text-align: center;
     width: 70%;
-    font-size: 2.188rem;
+    font-size: 2.5rem;
     font-family: 'Kalam', cursive;
     font-weight: 400;
     padding-top:2rem;
     color: #000000;
 
-    @media only screen and (max-width: 1216px){
-        font-size: 2.0rem;
-    }
-
     @media only screen and (max-width: 768px){
-        width: 60%;
-        font-size: 1.4rem;
-        text-align: left;
+        width: 80%;
+        font-size: 2rem;
+        text-align: center;
     }
 
     @media only screen and (max-width: 600px){
         font-weight: 400;
-        font-size: 1.4rem;
+        font-size: 2rem;
         padding-top:5rem;
     }
 `;
@@ -68,9 +68,9 @@ const SectAndNames = styled.div`
 `;
 
 const Section = styled.div`
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     font-weight: 400;
-    width: 22rem;
+    width: 15rem;
     height: fit-content;
     margin-bottom: 2rem;
     padding:0;
@@ -80,12 +80,12 @@ const Section = styled.div`
     text-align: left;
 
     @media only screen and (max-width: 1216px){
-        font-size: 1.0rem;
+        font-size: 1.5rem;
         width: 16rem;
     }
 
     @media only screen and (max-width: 1024px){
-        font-size: 1.0rem;
+        font-size: 1.15rem;
         width: 14rem;
     }
 
@@ -98,14 +98,14 @@ const Section = styled.div`
         margin: 0 auto;
     }
     @media only screen and (max-width: 600px){
-        font-size: 1.0rem;
+        font-size: 1.15rem;
         width: 60%;
     }
 `;
 
 const Name = styled.div`
     font-family: 'Special Elite', cursive;
-    font-size: 1.0rem;
+    font-size: 1.15rem;
     font-weight: 400;
     height: 2rem;
     margin-top: 1rem;
@@ -137,7 +137,7 @@ const SectionTitle = styled.div`
 const Credits = () => {
     return (
         <Container id="credits">
-            <HeaderDiv><Header>Staff Who Made This Issue Possible</Header></HeaderDiv>
+            <HeaderDiv><Header>Credits</Header></HeaderDiv>
             <SectAndNames>
                 {Object.entries(credits).map(([section, key]) => {
                     return(
