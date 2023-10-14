@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { ReactComponent as TestImage } from './test_img.svg';
+import tape from "./tape.svg"
 
 const TapedPictureContainer = styled.div`
     width: 16.3125rem;
@@ -26,9 +27,14 @@ const Author = styled.div`
     padding-right: 10%;
 `;
 
+const Tape = styled.img`
+    transform: translateY(-70px);
+`
+
 function TapedPicture({ title, author }) {
     return (
         <TapedPictureContainer>
+            <Tape src={ tape }/>
             <TestImage />
             <Title>
                 {title}
