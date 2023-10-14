@@ -4,6 +4,9 @@ import styled from 'styled-components';
 const Body = styled.div`
     margin-bottom: 400px;
     padding: 0px;
+	@media screen and (max-width: 1024px) {
+		display:none;
+	}
 `;
 
 const EnvelopeWrapper = styled.div`
@@ -84,31 +87,20 @@ const Title = styled.div`
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+	margin:1rem;
 `;
 
 const Text = styled.div`
     color: var(--Main-brown, #665B56);
     text-shadow: 0px 0.1814446896314621px 0px #000;
     font-family: Enriqueta;
-    font-size: 18px;
+    font-size: 1.2rem;
+	padding:1rem;
     font-style: normal;
     font-weight: 400;
-    line-height: 137.3%;
+    line-height: 1.5rem;
+	text-align:left;
 `;
-
-const letter_paragraph = `Lorem ipsum dolor sit amet consectetur. Integer viverra etiam vitae sed. 
-Arcu gravida nulla tristique interdum vel. Eget volutpat urna id sed condimentum. Odio adipiscing 
-massa ipsum vitae quisque.Lorem ipsum dolor sit amet consectetur. Integer viverra etiam vitae sed. 
-Arcu gravida nulla tristique interdum vel. Eget volutpat urna id sed condimentum. Odio adipiscing 
-massa ipsum vitae quisque.Lorem ipsum dolor sit amet consectetur. Integer viverra etiam vitae sed. 
-Arcu gravida nulla tristique interdum vel. Eget volutpat urna id sed condimentum. Odio adipiscing 
-massa ipsum vitae quisque.Lorem ipsum dolor sit amet consectetur. Integer viverra etiam vitae sed. 
-Arcu gravida nulla tristique interdum vel. Eget volutpat urna id sed condimentum. Odio adipiscing 
-massa ipsum vitae quisque.Lorem ipsum dolor sit amet consectetur. Integer viverra etiam vitae sed. 
-Arcu gravida nulla tristique interdum vel. Eget volutpat urna id sed condimentum. Odio adipiscing 
-massa ipsum vitae quisque.Lorem ipsum dolor sit amet consectetur. Integer viverra etiam vitae sed. 
-Arcu gravida nulla tristique interdum vel. Eget volutpat urna id sed condimentum. Odio adipiscing 
-massa ipsum vitae quisque.`;
 
 const Envelope = () => {
     const [clickedState, setClickedState] = useState(false);
@@ -135,8 +127,24 @@ const Envelope = () => {
                     <CoverBottomRight clickedState={clickedState}></CoverBottomRight>
                 </Cover>
                 <LetterWrapper clickedState={clickedState} style={{zIndex: zIndex}}>
-                    <Title>~Letter From The Editor ~</Title>
-                    <Text>{letter_paragraph}</Text>
+                    <Title>Letter From The Editor</Title>
+                    <Text>
+						Dear readers, 
+						<br/>
+						<br/>
+						Students, parents, alumni, and other Columbia affiliates have flocked to campus for Homecoming, 
+						coming together in a moment of school spirit to celebrate the Columbia community. 
+						Whether you are the biggest Lions fan out there, or have never stepped foot in Wien Stadium, 
+						we hope this edition illuminates the spirit of Homecoming. 
+						<br/>
+						<br/>
+						From the inauguration of 20th University President Minouche Shafik to a dive into the pump-up playlists 
+						of Columbia football players, we invite you to take a look at the stories that have shaped the University this year 
+						and reflect on the state of community at Columbia.
+						<br/>
+						<br/>
+						Go Lions!
+					</Text>
                 </LetterWrapper>
             </EnvelopeWrapper>
         </Body>
