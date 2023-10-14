@@ -1,7 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import Illo from "../hoco-image.png"
-
 const CenteredContainer = styled.div`
 @media screen and (max-width: 1024px) {
 		display:none;
@@ -16,7 +14,7 @@ const CenteredImage = styled.img`
 function CenteredImgComponent() {
   return (
     <CenteredContainer>
-      <CenteredImage src={Illo} alt="" />
+      <CenteredImage src="https://cloudfront-us-east-1.images.arcpublishing.com/spectator/KPQFKBZXHFHH3NCI4TIPY4M6YA.png" alt="" />
     </CenteredContainer>
   );
 }
