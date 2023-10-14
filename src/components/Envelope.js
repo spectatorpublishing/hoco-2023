@@ -144,6 +144,12 @@ const Envelope = () => {
 						<br/>
 						<br/>
 						Go Lions!
+						<br/>
+						<br/>
+						<b>Irie Sentner, Editor in Chief</b>
+						<br/>
+						<br/>
+						<b>Andrew Park, Managing Editor</b>
 					</Text>
                 </LetterWrapper>
             </EnvelopeWrapper>
