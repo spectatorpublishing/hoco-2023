@@ -1,18 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
-import filmlong from '../filmlong.svg';
 import button from '../button.svg';
+import { HashLink } from 'react-router-hash-link';
+import { sections } from '../data/sections';
 
-//background-image: url(${filmlong});
 const NavContainer = styled.nav`
     width:100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 30px;
     max-width: 100%;
     margin: 0 auto;
     overflow: hidden;
+	margin-top:-5rem;
+	@media screen and (max-width: 1024px) {
+		display:none;
+	}
 `;
 
 const NavBox = styled.div`
@@ -20,67 +23,57 @@ const NavBox = styled.div`
     align-items: center;
 `;
 
-const StyledLink = styled.a`
-    font-family: Special Elite;
-    background-image: url(${ button });
-    background-size: cover;
-    width: 187px;
-    height: 127px;
-    padding: 40px 40px;
-    text-decoration: none; /* Remove underlines */
-    color: #333; /* Set the desired text color */
-    align-items: center;
-    flex:1;
-`
-
 const FilmButton = styled.div`
     background-image: url(${ button });
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    width: 187px; /* Set width to auto to allow it to adjust to the image's width */
-    height: 127px; /* Set height to 100% to match the image's height */
+    width: 160px; /* Set width to auto to allow it to adjust to the image's width */
+    height:85px; /* Set height to 100% to match the image's height */
     display: flex;
     align-items: center;
     justify-content: center;
+	backdrop-filter: blur(10px);
 `
 
 const NavButton = styled.button`
-    width: 173px;
-    height: 57px;
+    width: 150px;
+    height: 50px;
+	z-index:-1;
     margin-bottom: 4px;
     margin-left:2px;
-    background-color: #CAC3A8;
+    background-color: black;
     border: none; /* Removes the button border */
     font-family: Special Elite;
-    font-size: 22px;
-    font-weight: 400;
+    font-size: 1.35rem;
     cursor: pointer;
+	color:white;
+	opacity:0.85;
     transition: background-color 0.3s;
 
     &:hover {
-        background-color: #EBD791;
+        font-weight:700;
+		opacity:0.9;
+		font-size: 1.35rem;
+		color: #F2F2F2;
+		background-color: black;
     }
 `
 
-function NavElement({ path, title }) {
-  
+function NavElement({ url, title }) {
   return (
     <FilmButton>
-      <NavButton>
-        <a 
-          href={`/${ path }`}>
-            { title }
-        </a>
-      </NavButton>
+      <HashLink smooth to={`#${url}`} style={{textDecoration:'none'}}>
+		<NavButton>{title}</NavButton>
+	  </HashLink>
     </FilmButton>
-  )
+  ) 
 }
 
 
 function NavigationBar() {
   return (
-    <>
+    <div style = {{position:'sticky', top:0, zIndex:'100'}}>
       <NavContainer>
         <ul style={{ listStyleType: 'none'}}>
           <NavBox>
@@ -89,12 +82,9 @@ function NavigationBar() {
             <FilmButton/>
             <FilmButton/>
             <FilmButton/>
-            <NavElement path={ "/" } title={ "Home" }/>
-            <NavElement path={ "/university" } title={ "University" }/>
-            <NavElement path={ "/city-news" } title={ "City News" }/>
-            <NavElement path={ "/sports" } title={ "Sports" }/>
-            <NavElement path={ "/a-c" } title={ "A&C" }/>
-            <NavElement path={ "/opinion" } title={ "Opinion" }/>
+            {sections.map((section, index) => (
+				<NavElement url={section.url} title={section.title}/> 
+        	))}
             <FilmButton/>
             <FilmButton/>
             <FilmButton/>
@@ -103,7 +93,7 @@ function NavigationBar() {
           </NavBox>
         </ul>
       </NavContainer>
-    </>
+    </div>
   );
 }
 
