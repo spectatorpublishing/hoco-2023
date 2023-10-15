@@ -140,16 +140,11 @@ const Envelope = () => {
 						<br/>
 						From the inauguration of 20th University President Minouche Shafik to a dive into the pump-up playlists 
 						of Columbia football players, we invite you to take a look at the stories that have shaped the University this year 
-						and reflect on the state of community at Columbia.
-						<br/>
-						<br/>
-						Go Lions!
+						and reflect on the state of community at Columbia. Go Lions!
 						<br/>
 						<br/>
 						<b>Irie Sentner, Editor in Chief</b>
 						<br/>
-						<br/>
-						<b>Andrew Park, Managing Editor</b>
 					</Text>
                 </LetterWrapper>
             </EnvelopeWrapper>
